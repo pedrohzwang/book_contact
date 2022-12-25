@@ -1,5 +1,4 @@
-import 'dart:html';
-
+import 'package:contacts/navigation/routes.dart';
 import 'package:contacts/widgets/contact_card.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -26,6 +25,11 @@ class _ContactListState extends State<ContactList> {
         width: 70,
         child: FloatingActionButton(
           onPressed: () {
+            Navigator.pushNamed(
+              context,
+              contactForm,
+              arguments: null,
+            );
           },
           child: const Icon(Icons.add),
         ),

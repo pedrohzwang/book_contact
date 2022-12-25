@@ -1,4 +1,5 @@
 import 'package:contacts/models/contact.dart';
+import 'package:contacts/navigation/routes.dart';
 import 'package:flutter/material.dart';
 
 class ContactCard extends StatelessWidget {
@@ -9,12 +10,8 @@ class ContactCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, contactForm, arguments: _contact),
       child: Card(
-          // padding: const EdgeInsets.all(3),
-          // decoration: BoxDecoration(
-          //   borderRadius: BorderRadius.circular(5),
-          //   color: Theme.of(context).primaryColorDark,
-          // ),
           child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
@@ -35,7 +32,8 @@ class ContactCard extends StatelessWidget {
               children: [
                 Text(
                   _contact.name,
-                  style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 3),

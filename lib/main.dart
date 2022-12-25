@@ -1,4 +1,6 @@
 import 'package:contacts/hive/hive_controller.dart';
+import 'package:contacts/navigation/arguments/contactForm/extract_arguments.dart';
+import 'package:contacts/navigation/routes.dart';
 import 'package:contacts/pages/home.dart';
 import 'package:contacts/theme/theme.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +24,9 @@ class MyApp extends StatelessWidget {
       title: 'Book Contact',
       theme: theme,
       home: const ContactList(),
+      routes: {
+        contactForm: (context) => const ExtractArgumentsContactForm(),
+      },
     );
   }
 }
