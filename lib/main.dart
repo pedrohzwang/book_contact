@@ -6,18 +6,18 @@ import 'package:hive_flutter/adapters.dart';
 void main() async {
   await Hive.initFlutter();
   HiveController hiveController = HiveController();
-  hiveController.registerAdapters;
+  hiveController.registerAdapters();
+  await hiveController.openBoxes();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showSemanticsDebugger: false,
+      debugShowCheckedModeBanner: false,
       title: 'Book Contact',
       theme: ThemeData(
         primarySwatch: Colors.blue,
