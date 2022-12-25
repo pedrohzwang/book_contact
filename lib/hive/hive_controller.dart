@@ -9,7 +9,7 @@ class HiveController {
   }
 
   Future<void> openBoxes() async {
-    await Hive.openBox<Contact>('contact');
+    contactBox = await Hive.openBox<Contact>('contact');
     return; 
   }
 }
