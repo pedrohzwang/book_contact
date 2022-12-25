@@ -1,5 +1,6 @@
 import 'package:contacts/hive/hive_controller.dart';
 import 'package:contacts/pages/home.dart';
+import 'package:contacts/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -19,10 +20,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Book Contact',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Home(title: 'Book Contact'),
+      theme: theme,
+      home: const ContactList(),
     );
   }
 }
