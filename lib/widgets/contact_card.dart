@@ -7,10 +7,81 @@ class ContactCard extends StatelessWidget {
 
   final Contact _contact;
 
+  _showOptions(BuildContext context, Contact contact) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            actions: [
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Ligar",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Editar",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  "Excluir",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+            ],
+          );
+        });
+
+    // showBottomSheet(
+    //     context: context,
+    //     builder: (context) {
+    //       return BottomSheet(
+    //           onClosing: () {},
+    //           builder: (context) {
+    //             return Container(
+    //               padding: const EdgeInsets.all(10.0),
+    //               child: Column(
+    //                 crossAxisAlignment: CrossAxisAlignment.center,
+    //                 children: <Widget>[
+    //                   TextButton(
+    //                     onPressed: () {},
+    //                     child: const Text(
+    //                       "Ligar",
+    //                       style: TextStyle(fontSize: 20.0),
+    //                     ),
+    //                   ),
+    //                   TextButton(
+    //                     onPressed: () {},
+    //                     child: const Text(
+    //                       "Ligar",
+    //                       style: TextStyle(fontSize: 20.0),
+    //                     ),
+    //                   ),
+    //                   TextButton(
+    //                     onPressed: () {},
+    //                     child: const Text(
+    //                       "Ligar",
+    //                       style: TextStyle(fontSize: 20.0),
+    //                     ),
+    //                   ),
+    //                 ],
+    //               ),
+    //             );
+    //           });
+    //     });
+  }
+
+// Navigator.pushNamed(context, contactForm, arguments: _contact)
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => Navigator.pushNamed(context, contactForm, arguments: _contact),
+      onTap: () => _showOptions(context, _contact),
       child: Card(
           child: Padding(
         padding: const EdgeInsets.all(8.0),

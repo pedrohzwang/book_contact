@@ -13,6 +13,7 @@ class ContactList extends StatefulWidget {
 }
 
 class _ContactListState extends State<ContactList> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
